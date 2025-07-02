@@ -35,7 +35,7 @@ export function CreatePostForm() {
 
   const queryClient = useQueryClient();
   const createPost = useMutation(
-    trpc.post.create.mutationOptions({
+    trpc.post.createLocal.mutationOptions({
       onSuccess: async () => {
         form.reset();
         await queryClient.invalidateQueries(trpc.post.pathFilter());
@@ -90,7 +90,7 @@ export function CreatePostForm() {
 
 export function PostList() {
   const trpc = useTRPC();
-  const { data: posts } = useSuspenseQuery(trpc.post.all.queryOptions());
+  const { data: posts } = useSuspenseQuery(trpc.post.allLocal.queryOptions());
 
   if (posts.length === 0) {
     return (
