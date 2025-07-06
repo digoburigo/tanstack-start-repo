@@ -47,7 +47,7 @@
     "zen:push": "zenstack generate --output ./src/zenstack && prisma db push"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.9",
+    "@libsql/client": "0.8.1",
     "@prisma/adapter-libsql": "^6.11.1",
     "@prisma/client": "^6.11.1",
     "@t3-oss/env-core": "^0.13.8",
