@@ -50,6 +50,11 @@ catalogs:
       specifier: 19.1.0
       version: 19.1.0
 
+overrides:
+  '@prisma/adapter-libsql': 6.11.1
+  '@prisma/client': 6.11.1
+  prisma: 6.11.1
+
 importers:
 
   .:
@@ -81,6 +86,9 @@ importers:
       '@acme/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@acme/db-zenstack':
+        specifier: workspace:*
+        version: link:../../packages/db-zenstack
       '@acme/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -378,10 +386,10 @@ importers:
         specifier: ^0.15.9
         version: 0.15.9(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@prisma/adapter-libsql':
-        specifier: ^6.11.1
+        specifier: 6.11.1
         version: 6.11.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@prisma/client':
-        specifier: ^6.11.1
+        specifier: 6.11.1
         version: 6.11.1(prisma@6.11.1(typescript@5.8.3))(typescript@5.8.3)
       '@t3-oss/env-core':
         specifier: ^0.13.8
@@ -412,7 +420,7 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       prisma:
-        specifier: ^6.11.1
+        specifier: 6.11.1
         version: 6.11.1(typescript@5.8.3)
       typescript:
         specifier: 'catalog:'
@@ -1829,7 +1837,7 @@ packages:
     resolution: {integrity: sha512-5CLFh8QP6KxRm83pJ84jaVCeSVPQr8k0L2SEtOJHwdkS57/VQDcI/wQpGmdyOZi+D9gdNabdo8tj1Uk+w+upsQ==}
     engines: {node: '>=18.18'}
     peerDependencies:
-      prisma: '*'
+      prisma: 6.11.1
       typescript: '>=5.1.0'
     peerDependenciesMeta:
       prisma:
@@ -3275,7 +3283,7 @@ packages:
   '@zenstackhq/runtime@2.16.0':
     resolution: {integrity: sha512-xYTSi+1S3qm9CpC9VmP7q4gadVaFodFSJzFSXu0JPIxPviHr6UVWe2JRwcgERLEQXIQR6Cc9nm2HtYcJsgofKA==}
     peerDependencies:
-      '@prisma/client': 5.0.0 - 6.10.x
+      '@prisma/client': 6.11.1
 
   '@zenstackhq/sdk@2.16.0':
     resolution: {integrity: sha512-TSOSsDFS1bOPCj97tlxcxe+2lMVeF7MC5ETz8E9qsLzae0QN2mtKd1MlH+yMRpn8hSFwQ/b25A3HphGWfvlCdA==}
@@ -4122,7 +4130,7 @@ packages:
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
       '@planetscale/database': '>=1.13'
-      '@prisma/client': '*'
+      '@prisma/client': 6.11.1
       '@tidbcloud/serverless': '*'
       '@types/better-sqlite3': '*'
       '@types/pg': '*'
@@ -7412,7 +7420,7 @@ packages:
     engines: {vscode: ^1.63.0}
     hasBin: true
     peerDependencies:
-      prisma: 5.0.0 - 6.10.x
+      prisma: 6.11.1
 
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
