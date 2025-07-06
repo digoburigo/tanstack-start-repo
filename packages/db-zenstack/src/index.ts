@@ -1,9 +1,9 @@
-import { db } from "./client";
-import * as DbTypes from "./types";
-
 import type { Prisma } from "@prisma-app/client";
 import type { DefaultArgs } from "@prisma-app/client/runtime/library";
+
 import type * as ZenstackClient from "./generated/zenstack/logical-prisma-client";
+import { db } from "./client";
+import * as DbTypes from "./types";
 
 export type ZenstackTransactionClient = Omit<
   ZenstackClient.PrismaClient<Prisma.PrismaClientOptions, never, DefaultArgs>,
@@ -12,6 +12,7 @@ export type ZenstackTransactionClient = Omit<
 
 export { db, DbTypes, DefaultArgs };
 
+export * from "./generated/prisma/client";
 export * as ZenstackClient from "./generated/zenstack/logical-prisma-client";
 export * as ZenstackZod from "./generated/zenstack/zod";
 export * as ZenstackEnhance from "./generated/zenstack/enhance";
