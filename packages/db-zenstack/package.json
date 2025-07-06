@@ -1,0 +1,74 @@
+{
+  "name": "@acme/db-zenstack",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./zenstack/client": {
+      "types": "./src/generated/zenstack/logical-prisma-client/index.d.ts",
+      "default": "./src/generated/zenstack/logical-prisma-client/index.js"
+    },
+    "./zenstack/runtime": {
+      "types": "./src/generated/zenstack/logical-prisma-client/runtime/index-browser.d.ts",
+      "default": "./src/generated/zenstack/logical-prisma-client/runtime/index-browser.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:migrate:deploy": "pnpm with-env prisma migrate deploy",
+    "db:migrate:dev": "pnpm with-env prisma migrate dev",
+    "db:migrate:reset": "pnpm with-env prisma migrate reset",
+    "db:push": "pnpm with-env prisma db push",
+    "db:seed": "SEED=true npx tsx ./prisma/seed/seed.ts",
+    "db:seed:cid": "SEED=true npx tsx ./prisma/seed/cid-seed.ts",
+    "db:seed:prod": "SEED=true npx tsx ./prisma/seed/seed-prod.ts",
+    "db:seed:supa": "SEED=true npx tsx ./prisma/seed/supa.ts",
+    "db:studio": "pnpm with-env prisma studio --browser none",
+    "db:turso:migrate": "turso db shell doc-db < ./prisma/migrations/20250129011433_init/migration.sql",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "generate": "pnpm with-env prisma generate",
+    "postinstall": "prisma generate",
+    "lint": "eslint",
+    "push": "pnpm with-env prisma db push --skip-generate",
+    "studio": "pnpm with-env prisma studio --port 5556",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --",
+    "zen:generate": "zenstack generate --output ./src/generated/zenstack",
+    "zen:generate:no-output": "zenstack generate",
+    "zen:init": "zenstack init",
+    "zen:push": "zenstack generate --output ./src/zenstack && prisma db push"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.9",
+    "@prisma/adapter-libsql": "^6.11.1",
+    "@prisma/client": "^6.11.1",
+    "@t3-oss/env-core": "^0.13.8",
+    "@zenstackhq/runtime": "2.16.0",
+    "@zenstackhq/server": "2.16.0",
+    "outdent": "^0.8.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:*",
+    "@faker-js/faker": "^9.9.0",
+    "@zenstackhq/trpc": "2.16.0",
+    "dotenv-cli": "^8.0.0",
+    "prisma": "^6.11.1",
+    "typescript": "catalog:",
+    "zenstack": "2.16.0"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
+  },
+  "zenstack": {
+    "schema": "./src/schema.zmodel"
+  }
+}
