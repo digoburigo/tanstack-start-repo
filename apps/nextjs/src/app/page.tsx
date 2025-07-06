@@ -13,7 +13,7 @@ const enhancedClient = ZenstackEnhance.enhance(db, null, {
   kinds: ["delegate"],
 });
 
-export default function HomePage() {
+export default async function HomePage() {
   prefetch(trpc.post.allLocal.queryOptions());
 
   const patients = await enhancedClient.patient.findMany();
