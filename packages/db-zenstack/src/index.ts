@@ -1,7 +1,6 @@
-import type { Prisma } from "@prisma-app/client";
-import type { DefaultArgs } from "@prisma-app/client/runtime/library";
-
 import type * as ZenstackClient from "./generated/zenstack/logical-prisma-client";
+import type { Prisma } from "./prisma/generated/prisma/client";
+import type { DefaultArgs } from "./prisma/generated/prisma/client/runtime/library";
 import { db } from "./client";
 import * as DbTypes from "./types";
 
