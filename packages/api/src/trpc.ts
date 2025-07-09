@@ -11,7 +11,7 @@ import superjson from "superjson";
 import { z, ZodError } from "zod/v4";
 
 import type { Auth } from "@acme/auth";
-import { db } from "@acme/db/client";
+import { db } from "./server-db";
 
 /**
  * 1. CONTEXT
@@ -104,6 +104,11 @@ const timingMiddleware = t.middleware(async ({ next, path }) => {
  * can still access user session data if they are logged in
  */
 export const publicProcedure = t.procedure.use(timingMiddleware);
+
+/**
+ * Base procedure for generated routers
+ */
+export const procedure = publicProcedure;
 
 /**
  * Protected (authenticated) procedure
