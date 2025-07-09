@@ -1,6 +1,7 @@
 // import { createClient } from "@libsql/client";
 import { PrismaLibSQL } from "@prisma/adapter-libsql";
-import { PrismaClient } from "@prisma-app/client";
+
+import { PrismaClient } from "./prisma/generated/prisma/client";
 
 // const libsql = createClient({
 //   url:

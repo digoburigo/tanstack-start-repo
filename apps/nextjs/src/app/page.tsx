@@ -1,7 +1,5 @@
 import { Suspense } from "react";
 
-import { db, ZenstackEnhance } from "@acme/db-zenstack";
-
 import { HydrateClient, prefetch, trpc } from "~/trpc/server";
 import {
   CreatePostForm,
@@ -9,14 +7,8 @@ import {
   PostList,
 } from "./_components/posts";
 
-const enhancedClient = ZenstackEnhance.enhance(db, null, {
-  kinds: ["delegate"],
-});
-
-export default async function HomePage() {
+export default function HomePage() {
   prefetch(trpc.post.allLocal.queryOptions());
-
-  const patients = await enhancedClient.patient.findMany();
 
   return (
     <HydrateClient>
@@ -26,7 +18,6 @@ export default async function HomePage() {
             Create <span className="text-primary">T3</span> Turbo
           </h1>
 
-          <pre>{JSON.stringify(patients, null, 2)}</pre>
           <CreatePostForm />
           <div className="w-full max-w-2xl overflow-y-scroll">
             <Suspense

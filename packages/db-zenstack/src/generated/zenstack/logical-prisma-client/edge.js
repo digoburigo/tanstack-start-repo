@@ -584,7 +584,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/rodrigoburigo/Documents/Projects/JavaScript/tanstack-start-repo/packages/db-zenstack/src/generated/zenstack/logical-prisma-client",
+      "value": "/Users/jiasheng/Work/repo/tanstack-start-repo/packages/db-zenstack/src/generated/zenstack/logical-prisma-client",
       "fromEnvVar": null
     },
     "config": {
@@ -601,7 +601,7 @@ const config = {
     "previewFeatures": [
       "driverAdapters"
     ],
-    "sourceFilePath": "/Users/rodrigoburigo/Documents/Projects/JavaScript/tanstack-start-repo/packages/db-zenstack/src/logical-1751770203450.prisma",
+    "sourceFilePath": "/Users/jiasheng/Work/repo/tanstack-start-repo/packages/db-zenstack/src/logical-1751861056481.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

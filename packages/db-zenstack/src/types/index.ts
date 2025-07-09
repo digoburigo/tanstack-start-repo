@@ -1,4 +1,4 @@
-import type { Prisma } from "zenstack-app/models";
+import type { Prisma } from "../generated/zenstack/models";
 
 // -- INIT: PATIENT ENTITY
 const patientEntityInclude = {

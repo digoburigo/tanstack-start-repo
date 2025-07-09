@@ -477,7 +477,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/rodrigoburigo/Documents/Projects/JavaScript/tanstack-start-repo/packages/db-zenstack/src/generated/prisma/client",
+      "value": "/Users/jiasheng/Work/repo/tanstack-start-repo/packages/db-zenstack/src/generated/prisma/client",
       "fromEnvVar": null
     },
     "config": {
@@ -494,7 +494,7 @@ const config = {
     "previewFeatures": [
       "driverAdapters"
     ],
-    "sourceFilePath": "/Users/rodrigoburigo/Documents/Projects/JavaScript/tanstack-start-repo/packages/db-zenstack/src/prisma/schema.prisma",
+    "sourceFilePath": "/Users/jiasheng/Work/repo/tanstack-start-repo/packages/db-zenstack/src/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
